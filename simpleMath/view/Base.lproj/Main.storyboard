@@ -18,40 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpI-LL-geJ">
-                                <rect key="frame" x="223" y="83" width="86" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpI-LL-geJ">
+                                <rect key="frame" x="159" y="20" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <segue destination="GZR-3Y-3d3" kind="modal" id="6XL-6g-7tU"/>
+                                    <segue destination="GZR-3Y-3d3" kind="presentation" modalTransitionStyle="flipHorizontal" id="RaU-1v-3Yx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khy-SD-nmu">
-                                <rect key="frame" x="223" y="138" width="86" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <segue destination="xbP-0Z-HaW" kind="push" id="6MI-fA-56t"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWD-IA-DZy">
-                                <rect key="frame" x="223" y="248" width="86" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Result"/>
-                                <connections>
-                                    <segue destination="e2i-4u-Uzz" kind="modal" id="mTx-zw-oDW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cw2-ye-iAY">
-                                <rect key="frame" x="223" y="193" width="86" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cw2-ye-iAY">
+                                <rect key="frame" x="158.5" y="111.5" width="57" height="30"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
-                                    <segue destination="4r1-GY-BYB" kind="modal" id="Ah2-WR-ors"/>
+                                    <segue destination="4r1-GY-BYB" kind="presentation" modalTransitionStyle="flipHorizontal" id="lSb-fe-f5Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khy-SD-nmu">
+                                <rect key="frame" x="172" y="65" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <segue destination="xbP-0Z-HaW" kind="show" id="RcE-1Z-pvh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWD-IA-DZy">
+                                <rect key="frame" x="165.5" y="165.5" width="43" height="30"/>
+                                <state key="normal" title="Result"/>
+                                <connections>
+                                    <segue destination="e2i-4u-Uzz" kind="presentation" modalTransitionStyle="partialCurl" id="I5b-2U-1XO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zWD-IA-DZy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2mH-9b-CEM"/>
+                            <constraint firstItem="zWD-IA-DZy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-153" id="63I-f7-3ml"/>
+                            <constraint firstItem="Cw2-ye-iAY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="94V-CY-4Hb"/>
+                            <constraint firstItem="khy-SD-nmu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AGl-JP-kwj"/>
+                            <constraint firstItem="khy-SD-nmu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-253.5" id="VqF-Bj-Ago"/>
+                            <constraint firstItem="Cw2-ye-iAY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-207" id="Z4a-or-UAt"/>
+                            <constraint firstItem="fpI-LL-geJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n30-0N-gab"/>
+                            <constraint firstItem="fpI-LL-geJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n5V-rV-T3E"/>
+                            <constraint firstItem="fpI-LL-geJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-298.5" id="yLD-20-R7N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -68,9 +75,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79X-pk-FAz">
-                                <rect key="frame" x="202" y="230" width="48" height="30"/>
+                                <rect key="frame" x="21" y="20" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <segue destination="yC2-DB-bH3" kind="unwind" unwindAction="comeHome:" id="UhG-ru-1Xi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxh-jk-DAs">
+                                <rect key="frame" x="319" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,13 +93,14 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGy-tM-Wo8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yC2-DB-bH3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-143" y="776"/>
+            <point key="canvasLocation" x="-143.19999999999999" y="775.86206896551732"/>
         </scene>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="8k7-Ef-Qcb">
             <objects>
-                <viewController id="GZR-3Y-3d3" sceneMemberID="viewController">
+                <viewController id="GZR-3Y-3d3" customClass="registrationViewController" customModule="simpleMath" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aur-ZW-rb4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,15 +149,27 @@
                                 <rect key="frame" x="223" y="311" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="mAa-Vh-5Gi" kind="unwind" unwindAction="comeHome:" id="xvl-rj-N1D"/>
+                                </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Llt-vK-lNe">
+                                <rect key="frame" x="127" y="235" width="75" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Boy"/>
+                                    <segment title="Girl"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="P3w-Xq-N30"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yVY-0Z-YQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mAa-Vh-5Gi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="656.79999999999995" y="92.203898050974516"/>
+            <point key="canvasLocation" x="542" y="93"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="G6i-7K-u2n">
@@ -155,6 +183,9 @@
                                 <rect key="frame" x="75" y="353" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="btd-GN-ruU" kind="unwind" unwindAction="comeHome:" id="yj6-Er-sUw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvz-df-bmD">
                                 <rect key="frame" x="60" y="130" width="30" height="30"/>
@@ -183,6 +214,7 @@
                     <navigationItem key="navigationItem" id="hZS-r3-vFe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IE3-hN-uNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="btd-GN-ruU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1349.5999999999999" y="92.203898050974516"/>
         </scene>
@@ -195,16 +227,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1h-FV-QwQ">
-                                <rect key="frame" x="80" y="225" width="48" height="30"/>
+                                <rect key="frame" x="21" y="20" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <segue destination="6Qq-Zi-seM" kind="unwind" unwindAction="comeHome:" id="3NU-P9-YLo"/>
+                                </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QFG-Fe-5Kr">
+                                <rect key="frame" x="61" y="197" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zoK-j8-i0q"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPc-Zs-Gw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6Qq-Zi-seM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="657" y="776"/>
         </scene>

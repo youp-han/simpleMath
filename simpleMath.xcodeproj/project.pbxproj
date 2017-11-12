@@ -14,6 +14,7 @@
 		142001BB1FB818ED00E35857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142001B91FB818ED00E35857 /* LaunchScreen.storyboard */; };
 		142001C61FB818ED00E35857 /* simpleMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142001C51FB818ED00E35857 /* simpleMathTests.swift */; };
 		142001D11FB818ED00E35857 /* simpleMathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142001D01FB818ED00E35857 /* simpleMathUITests.swift */; };
+		142001E61FB83D4A00E35857 /* registrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142001E51FB83D4A00E35857 /* registrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		142001CC1FB818ED00E35857 /* simpleMathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simpleMathUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		142001D01FB818ED00E35857 /* simpleMathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simpleMathUITests.swift; sourceTree = "<group>"; };
 		142001D21FB818ED00E35857 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		142001E51FB83D4A00E35857 /* registrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +99,11 @@
 		142001AF1FB818ED00E35857 /* simpleMath */ = {
 			isa = PBXGroup;
 			children = (
+				142001E01FB83A5500E35857 /* model */,
+				142001DF1FB83A4700E35857 /* viewController */,
+				142001DE1FB83A3000E35857 /* view */,
 				142001B01FB818ED00E35857 /* AppDelegate.swift */,
-				142001B21FB818ED00E35857 /* ViewController.swift */,
-				142001B41FB818ED00E35857 /* Main.storyboard */,
 				142001B71FB818ED00E35857 /* Assets.xcassets */,
-				142001B91FB818ED00E35857 /* LaunchScreen.storyboard */,
 				142001BC1FB818ED00E35857 /* Info.plist */,
 			);
 			path = simpleMath;
@@ -123,6 +125,31 @@
 				142001D21FB818ED00E35857 /* Info.plist */,
 			);
 			path = simpleMathUITests;
+			sourceTree = "<group>";
+		};
+		142001DE1FB83A3000E35857 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				142001B41FB818ED00E35857 /* Main.storyboard */,
+				142001B91FB818ED00E35857 /* LaunchScreen.storyboard */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		142001DF1FB83A4700E35857 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				142001B21FB818ED00E35857 /* ViewController.swift */,
+				142001E51FB83D4A00E35857 /* registrationViewController.swift */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		142001E01FB83A5500E35857 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +288,7 @@
 			files = (
 				142001B31FB818ED00E35857 /* ViewController.swift in Sources */,
 				142001B11FB818ED00E35857 /* AppDelegate.swift in Sources */,
+				142001E61FB83D4A00E35857 /* registrationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
