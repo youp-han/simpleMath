@@ -17,12 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var systemAnswerText: UITextField!
     
     let MAX_NUM : UInt32 = 20
-    
-    var finalSystemAnswer : Int = 0
     var systemOperationType : String = "+"
-    var firstNumber : Int = 0
-    var secondNumber : Int = 0
-    
+    let calc = CoreCalc()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,39 +28,17 @@ class ViewController: UIViewController {
     }
 
     func systemSelectRandomNumber() {
-        firstNumber = Int(arc4random_uniform(MAX_NUM)+2)
-        secondNumber = Int(arc4random_uniform(MAX_NUM)+2)
-        
-        firstNumText.text = String(firstNumber)
-        secondNumText.text = String(secondNumber)
-        
+        calc.maxNum = MAX_NUM
+        calc.getRandomNumber()
+        firstNumText.text = String(calc.firstNum)
+        secondNumText.text = String(calc.secondNum)
         systemAnswerText.text = ""
         userAnswerText.text = ""
-        
     }
     
-    func plus(firstNum:Int, secondNum:Int)->Int{
-        return firstNum + secondNum
-    }
-
     @IBAction func userCheckAnswer(_ sender: Any) {
-        switch(systemOperationType){
-        case "+" :
-            finalSystemAnswer = plus(firstNum: firstNumber, secondNum: secondNumber)
-    
-        case "-" :
-            finalSystemAnswer = plus(firstNum: firstNumber, secondNum: secondNumber)
-
-        case "*" :
-            finalSystemAnswer = plus(firstNum: firstNumber, secondNum: secondNumber)
-
-        case "/" :
-            finalSystemAnswer = plus(firstNum: firstNumber, secondNum: secondNumber)
-
-        default :
-            finalSystemAnswer = 0
-        }
-        systemAnswerText.text = String(finalSystemAnswer)
+        calc.operationType = systemOperationType
+        systemAnswerText.text = String(calc.operationCalc())
     }
     
     @IBAction func refreshProblem(_ sender: Any) {
