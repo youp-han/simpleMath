@@ -56,15 +56,39 @@
 		141FE0491FCAAC190004A139 /* Simeple Match */ = {
 			isa = PBXGroup;
 			children = (
-				141FE04A1FCAAC190004A139 /* AppDelegate.swift */,
-				141FE04C1FCAAC190004A139 /* ViewController.swift */,
-				141FE04E1FCAAC190004A139 /* Main.storyboard */,
+				141FE0601FCCE79F0004A139 /* View */,
+				141FE05F1FCCE77E0004A139 /* ViewController */,
+				141FE05E1FCCE75C0004A139 /* Model */,
 				141FE0511FCAAC190004A139 /* Assets.xcassets */,
-				141FE0531FCAAC190004A139 /* LaunchScreen.storyboard */,
 				141FE0561FCAAC190004A139 /* Info.plist */,
-				141FE05C1FCC07710004A139 /* CoreCalc.swift */,
 			);
 			path = "Simeple Match";
+			sourceTree = "<group>";
+		};
+		141FE05E1FCCE75C0004A139 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				141FE05C1FCC07710004A139 /* CoreCalc.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		141FE05F1FCCE77E0004A139 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				141FE04C1FCAAC190004A139 /* ViewController.swift */,
+				141FE04A1FCAAC190004A139 /* AppDelegate.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		141FE0601FCCE79F0004A139 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				141FE04E1FCAAC190004A139 /* Main.storyboard */,
+				141FE0531FCAAC190004A139 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

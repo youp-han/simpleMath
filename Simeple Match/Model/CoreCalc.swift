@@ -14,6 +14,7 @@ class CoreCalc: NSObject {
     var secondNum : Int = 0
     var operationType : String = "+"
     var maxNum : UInt32 = 0
+    var userInputNum : Int = 0
     
     func plus()->Int{
         return firstNum + secondNum
@@ -59,6 +60,14 @@ class CoreCalc: NSObject {
     func getRandomNumber() {
         firstNum = Int(arc4random_uniform(maxNum)+2)
         secondNum = Int(arc4random_uniform(maxNum)+2)
+    }
+    
+    func checkAnswer()->Bool{
+        if(operationCalc() == userInputNum){
+            return true
+        }else{
+            return false
+        }
     }
     
 }

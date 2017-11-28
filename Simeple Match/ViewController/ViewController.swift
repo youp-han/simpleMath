@@ -28,21 +28,57 @@ class ViewController: UIViewController {
     }
 
     func systemSelectRandomNumber() {
+        
         calc.maxNum = MAX_NUM
         calc.getRandomNumber()
         firstNumText.text = String(calc.firstNum)
         secondNumText.text = String(calc.secondNum)
         systemAnswerText.text = ""
         userAnswerText.text = ""
+        self.userAnswerText.backgroundColor = UIColor.white
+
     }
     
-    @IBAction func userCheckAnswer(_ sender: Any) {
+    func checkAnswer()->Bool{
+        
+        if(userAnswerText.text=="") { userAnswerText.text = "0" }
+        
         calc.operationType = systemOperationType
-        systemAnswerText.text = String(calc.operationCalc())
+        calc.userInputNum = Int(userAnswerText.text!)!
+        //systemAnswerText.text = String(calc.operationCalc())
+        
+        if calc.checkAnswer(){
+            return true
+            
+        }
+        else{
+            return false
+            
+        }
+        
     }
     
     @IBAction func refreshProblem(_ sender: Any) {
-        systemSelectRandomNumber()
+        self.normalCheckAnswer()
+    }
+    
+    //
+    func normalCheckAnswer(){
+        
+        if(checkAnswer()){
+            userAnswerText.backgroundColor = UIColor.blue
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){
+                self.systemSelectRandomNumber()
+            }
+        }else{
+            userAnswerText.backgroundColor = UIColor.red
+        }
+    }
+    
+    //
+    func timeAttackCheckAnswer(){
+        
     }
     
 }
