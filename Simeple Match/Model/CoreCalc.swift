@@ -10,25 +10,25 @@ import Foundation
 
 class CoreCalc: NSObject {
     
-    var firstNum : Int = 0
-    var secondNum : Int = 0
+    var firstNum : Double = 0
+    var secondNum : Double = 0
     var operationType : String = "+"
     var maxNum : UInt32 = 0
-    var userInputNum : Int = 0
+    var userInputNum : Double = 0
     
-    func plus()->Int{
+    func plus()->Double{
         return firstNum + secondNum
     }
     
-    func minus()->Int{
+    func minus()->Double{
         return firstNum - secondNum
     }
     
-    func times()->Int{
+    func times()->Double{
         return firstNum * secondNum
     }
     
-    func divide()->Int{
+    func divide()->Double{
         if (secondNum != 0){
             return firstNum / secondNum
         }
@@ -37,7 +37,7 @@ class CoreCalc: NSObject {
         }
     }
     
-    func operationCalc()->Int{
+    func operationCalc()->Double{
         
         switch(operationType){
         case "+" :
@@ -58,8 +58,8 @@ class CoreCalc: NSObject {
     }
     
     func getRandomNumber() {
-        firstNum = Int(arc4random_uniform(maxNum)+2)
-        secondNum = Int(arc4random_uniform(maxNum)+2)
+        firstNum = Double(arc4random_uniform(maxNum)+2)
+        secondNum = Double(arc4random_uniform(maxNum)+2)
     }
     
     func checkAnswer()->Bool{

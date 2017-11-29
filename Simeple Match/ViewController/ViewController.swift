@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondNumText: UITextField!
     @IBOutlet weak var operationText: UITextField!
     @IBOutlet weak var userAnswerText: UITextField!
-    @IBOutlet weak var systemAnswerText: UITextField!
     
     let MAX_NUM : UInt32 = 20
     var systemOperationType : String = "+"
@@ -26,27 +25,30 @@ class ViewController: UIViewController {
         operationText.text = systemOperationType
         systemSelectRandomNumber()
     }
-
+    
+    @IBAction func refreshProblem(_ sender: Any) {
+        self.practiceCheckAnswer()
+    }
+    
+    //generate random numbers to calculate
     func systemSelectRandomNumber() {
         
         calc.maxNum = MAX_NUM
         calc.getRandomNumber()
-        firstNumText.text = String(calc.firstNum)
-        secondNumText.text = String(calc.secondNum)
-        systemAnswerText.text = ""
+        firstNumText.text = String(format: "%.f", calc.firstNum)
+        secondNumText.text = String(format: "%.f", calc.secondNum)
         userAnswerText.text = ""
         self.userAnswerText.backgroundColor = UIColor.white
-
+        
     }
     
+    //check user's answer with the system's answer and return bool value
     func checkAnswer()->Bool{
         
         if(userAnswerText.text=="") { userAnswerText.text = "0" }
         
         calc.operationType = systemOperationType
-        calc.userInputNum = Int(userAnswerText.text!)!
-        //systemAnswerText.text = String(calc.operationCalc())
-        
+        calc.userInputNum = Double(userAnswerText.text!)!
         if calc.checkAnswer(){
             return true
             
@@ -58,12 +60,8 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func refreshProblem(_ sender: Any) {
-        self.normalCheckAnswer()
-    }
-    
-    //
-    func normalCheckAnswer(){
+    //checking answer for the practice Mode
+    func practiceCheckAnswer(){
         
         if(checkAnswer()){
             userAnswerText.backgroundColor = UIColor.blue
@@ -76,9 +74,9 @@ class ViewController: UIViewController {
         }
     }
     
-    //
+    //checking answer for the time attack mode
     func timeAttackCheckAnswer(){
-        
+        self.systemSelectRandomNumber()
     }
     
 }
