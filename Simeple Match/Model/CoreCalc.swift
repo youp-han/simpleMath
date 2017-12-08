@@ -8,68 +8,29 @@
 
 import Foundation
 
-class CoreCalc: NSObject {
-    
-    var firstNum : Double = 0
-    var secondNum : Double = 0
-    var operationType : String = "+"
-    var maxNum : UInt32 = 0
-    var userInputNum : Double = 0
-    
-    func plus()->Double{
-        return firstNum + secondNum
-    }
-    
-    func minus()->Double{
-        return firstNum - secondNum
-    }
-    
-    func times()->Double{
-        return firstNum * secondNum
-    }
-    
-    func divide()->Double{
-        if (secondNum != 0){
-            return firstNum / secondNum
-        }
-        else {
-            return 0
-        }
-    }
-    
-    func operationCalc()->Double{
-        
-        switch(operationType){
+struct Calculator{
+    var firstNum: Double = 0.0
+    var secondNum: Double = 0.0
+    var operation: String = ""
+    func performOperation () -> Double{
+        switch (operation) {
         case "+" :
-            return plus()
-            
+            return firstNum + secondNum
         case "-" :
-            return minus()
-            
+            return firstNum - secondNum
         case "*" :
-            return times()
-            
+            return firstNum * secondNum
         case "/" :
-            return divide()
-            
-        default :
+            if (secondNum > 0) {
+                return firstNum / secondNum
+            }else{
+                return 0
+            }
+        default:
+            print("not known operator")
             return 0
         }
     }
-    
-    func getRandomNumber() {
-        firstNum = Double(arc4random_uniform(maxNum)+2)
-        secondNum = Double(arc4random_uniform(maxNum)+2)
-    }
-    
-    func checkAnswer()->Bool{
-        if(operationCalc() == userInputNum){
-            return true
-        }else{
-            return false
-        }
-    }
-    
 }
 
 

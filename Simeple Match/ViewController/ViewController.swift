@@ -9,75 +9,64 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var firstNumText: UITextField!
-    @IBOutlet weak var secondNumText: UITextField!
-    @IBOutlet weak var operationText: UITextField!
-    @IBOutlet weak var userAnswerText: UITextField!
     
-    let MAX_NUM : UInt32 = 20
-    var systemOperationType : String = "+"
-    let calc = CoreCalc()
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var userAnswerText: UITextField!
+    @IBOutlet weak var totalQNoLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    var questionNumber : Int = 0
+    var score : Int = 0
+    let totalQuestionNumber : Int = 50
+    let systemOperationType : String = "+"
 
+    
+    let bank = QuestionBank(totalQuestionNo: 50, gameLevel: 1, gameType : "+")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        operationText.text = systemOperationType
-        systemSelectRandomNumber()
+        checkQuestionBank()
+        setUI()
     }
     
     @IBAction func refreshProblem(_ sender: Any) {
-        self.practiceCheckAnswer()
+        self.checkAnswer()
+        questionNumber += 1
+        setUI()
     }
     
+    
+    //check questions in Bank
+    func checkQuestionBank(){
+        for i in (0...totalQuestionNumber - 1) {
+            print ( "\(i))" + " \(bank.questionList[i].questionText)" + "\(bank.questionList[i].calculatedAnswer)" )
+        }
+    }
+    
+    
     //generate random numbers to calculate
-    func systemSelectRandomNumber() {
-        
-        calc.maxNum = MAX_NUM
-        calc.getRandomNumber()
-        firstNumText.text = String(format: "%.f", calc.firstNum)
-        secondNumText.text = String(format: "%.f", calc.secondNum)
+    func setUI() {
+        if (questionNumber >= totalQuestionNumber){
+            questionNumber = 0
+            score = 0
+            print ("game over")
+        }
+        questionLabel.text = bank.questionList[questionNumber].questionText
         userAnswerText.text = ""
-        self.userAnswerText.backgroundColor = UIColor.white
-        
+        totalQNoLabel.text = "\(questionNumber + 1)" + "/" + "\(totalQuestionNumber)"
+        scoreLabel.text = "Score: \(score)"
     }
     
     //check user's answer with the system's answer and return bool value
-    func checkAnswer()->Bool{
-        
+    func checkAnswer(){
         if(userAnswerText.text=="") { userAnswerText.text = "0" }
-        
-        calc.operationType = systemOperationType
-        calc.userInputNum = Double(userAnswerText.text!)!
-        if calc.checkAnswer(){
-            return true
-            
-        }
-        else{
-            return false
-            
-        }
-        
-    }
-    
-    //checking answer for the practice Mode
-    func practiceCheckAnswer(){
-        
-        if(checkAnswer()){
-            userAnswerText.backgroundColor = UIColor.blue
-            let when = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: when){
-                self.systemSelectRandomNumber()
-            }
-        }else{
-            userAnswerText.backgroundColor = UIColor.red
+        if (Double(userAnswerText.text!)! == (Double(bank.questionList[questionNumber].calculatedAnswer))){
+            score += 1
         }
     }
-    
-    //checking answer for the time attack mode
-    func timeAttackCheckAnswer(){
-        self.systemSelectRandomNumber()
-    }
-    
+
+   
 }
+
+
 
