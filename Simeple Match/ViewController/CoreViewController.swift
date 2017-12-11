@@ -23,13 +23,28 @@ class CoreViewController: UIViewController {
     var questionNumber : Int = 0
     var score : Int = 0
     var totalQuestionNumber : Int = 50
-    var systemOperationType : String = ""
+    var gameLevel : Int = 0
+    var systemOperationType : String = " "
 
     
-    let bank = QuestionBank(totalQuestionNo: 50, gameLevel: 1, gameType : "+")
+//    init(totalQuestionNo : Int, gameLevel : Int, systemOperationType : String){
+//
+//        self.totalQuestionNumber = totalQuestionNo
+//        self.gameLevel = gameLevel
+//        self.systemOperationType = systemOperationType
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
+    let bank = QuestionBank(totalQuestionNo: 50, gameLevel: 1, gameType : "*")
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //checkQuestionBank()
+        print("\(systemOperationType)")
         nextQuestion()
     }
     

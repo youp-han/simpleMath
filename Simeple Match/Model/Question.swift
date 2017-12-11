@@ -13,7 +13,7 @@ class Question {
     let calculatedAnswer : String
     
     init(question:String, answer:Double){
-        questionText = question
-        calculatedAnswer = String(answer)
+        self.questionText = question
+        self.calculatedAnswer = String(answer)
     }
 }

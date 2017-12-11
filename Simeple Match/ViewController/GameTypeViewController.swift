@@ -26,6 +26,7 @@ class GameTypeViewController: UIViewController {
         default: print("something went wrong")
         }
         
+        navigationController?.pushViewController(myVC, animated: true)
     }
     
     override func viewDidLoad() {
