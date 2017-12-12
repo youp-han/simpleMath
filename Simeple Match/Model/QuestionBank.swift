@@ -8,6 +8,7 @@
 
 import Foundation
 
+//desc: QuestionBank class
 class QuestionBank{
     var questionList = [Question]()
     
@@ -29,7 +30,7 @@ class QuestionBank{
             self.firstNumLimit = 99
             self.secondNumLimit = 99
         }else{
-            self.firstNumLimit = 99
+            self.firstNumLimit = 20
             self.secondNumLimit = 10
         }
         

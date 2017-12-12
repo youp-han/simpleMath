@@ -10,37 +10,25 @@ import UIKit
 
 class CoreViewController: UIViewController {
     
+    //desc: local properties
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var userAnswerText: UITextField!
     @IBOutlet weak var totalQNoLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     
-    @IBAction func closeWindow(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
+    //desc local variables
     var questionNumber : Int = 0
     var score : Int = 0
+    
+    //desc: variables being passed
     var totalQuestionNumber : Int = 50
-    var gameLevel : Int = 0
-    var systemOperationType : String = " "
+    var gameLevel = Int()
+    var systemOperationType = String()
+    let bank = QuestionBank(totalQuestionNo: 50, gameLevel: 1, gameType : "-")
 
-    
-//    init(totalQuestionNo : Int, gameLevel : Int, systemOperationType : String){
-//
-//        self.totalQuestionNumber = totalQuestionNo
-//        self.gameLevel = gameLevel
-//        self.systemOperationType = systemOperationType
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
-    let bank = QuestionBank(totalQuestionNo: 50, gameLevel: 1, gameType : "*")
-
-    
+    //desc: viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
         //checkQuestionBank()
@@ -48,23 +36,14 @@ class CoreViewController: UIViewController {
         nextQuestion()
     }
     
+    //desc: action when button pressed
     @IBAction func refreshProblem(_ sender: Any) {
         checkAnswer()
         questionNumber += 1
         nextQuestion()
     }
     
-    
-    //check questions in Bank
-    //can be blocked
-//    func checkQuestionBank(){
-//        for i in (0...totalQuestionNumber - 1) {
-//            print ( "\(i))" + " \(bank.questionList[i].questionText)" + "\(bank.questionList[i].calculatedAnswer)" )
-//        }
-//    }
-
-    
-    
+    //desc: move to the next Question
     func nextQuestion() {
         if (questionNumber >= totalQuestionNumber){
             questionNumber = 0
@@ -82,7 +61,7 @@ class CoreViewController: UIViewController {
     }
     
    
-    //check user's answer with the system's answer and return bool value
+    //desc: check user's answer with the system's answer and return bool value
     func checkAnswer(){
         if(userAnswerText.text=="") { userAnswerText.text = "0" }
         if (questionNumber < totalQuestionNumber){
@@ -91,6 +70,17 @@ class CoreViewController: UIViewController {
             }
         }
     }
+    
+    
+    
+    //desc: check questions in Bank
+    //can be blocked
+    //    func checkQuestionBank(){
+    //        for i in (0...totalQuestionNumber - 1) {
+    //            print ( "\(i))" + " \(bank.questionList[i].questionText)" + "\(bank.questionList[i].calculatedAnswer)" )
+    //        }
+    //    }
+
    
 }
 

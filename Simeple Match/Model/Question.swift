@@ -8,6 +8,7 @@
 
 import Foundation
 
+//desc: Question Class
 class Question {
     let questionText : String
     let calculatedAnswer : String

@@ -8,10 +8,12 @@
 
 import Foundation
 
+//desc: Calculator Structure
 struct Calculator{
     var firstNum: Double = 0.0
     var secondNum: Double = 0.0
     var operation: String = ""
+    
     func performOperation () -> Double{
         switch (operation) {
         case "+" :
@@ -30,6 +32,7 @@ struct Calculator{
             print("not known operator")
             return 0
         }
+        
     }
 }
 
