@@ -12,22 +12,32 @@ class GameTypeViewController: UIViewController {
 
     //desc: Action when the game type button pressed
     @IBAction func toCoreViewController(_ sender: Any) {
+        
         let myVC = storyboard?.instantiateViewController(withIdentifier: "CoreView") as! CoreViewController
         let button = sender as! UIButton
-        
-        print("\(button.tag)")
-        
-        switch (button.tag){
-        case 0: myVC.systemOperationType = "+"
-        case 1: myVC.systemOperationType = "-"
-        case 2: myVC.systemOperationType = "*"
-        case 3: myVC.systemOperationType = "/"
-        default: print("something went wrong")
-        }
-        
-        myVC.gameLevel = 1
+        myVC.bank = QuestionBank(totalQuestionNo: getTotalQuestionNo(), gameLevel: getGameLevel(), gameType : getOpertaionType(button: button.tag))
         navigationController?.pushViewController(myVC, animated: true)
     }
+    
+    
+    func getOpertaionType(button tag:Int)->String {
+        switch (tag){
+        case 0: return "+"
+        case 1: return "-"
+        case 2: return "*"
+        case 3: return "/"
+        default: return "something went wrong"
+        }
+    }
+    
+    func getTotalQuestionNo()->Int{
+        return 50
+    }
+    
+    func getGameLevel()->Int{
+        return 1
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

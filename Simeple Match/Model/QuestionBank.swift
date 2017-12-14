@@ -14,14 +14,17 @@ class QuestionBank{
     
     var firstNum : Double = 0.0
     var secondNum : Double = 0.0
-    var operationType : String = ""
+    lazy var operationType : String = ""
     
-    var upperLimit : Int = 0
+    lazy var upperLimit : Int = 0
     var firstNumLimit : UInt32 = 0
     var secondNumLimit : UInt32 = 0
     
     
     //class initialization
+    init(){
+        
+    }
     init(totalQuestionNo : Int, gameLevel : Int, gameType : String) {
         self.upperLimit = totalQuestionNo
         self.operationType = gameType
