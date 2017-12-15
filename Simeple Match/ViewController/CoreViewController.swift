@@ -60,6 +60,11 @@ class CoreViewController: UIViewController {
         if (questionNumber < bank.questionList.count){
             if (Double(userAnswerText.text!)! == (Double(bank.questionList[questionNumber].calculatedAnswer))){
                 score += 1
+                bank.questionList[questionNumber].status = 1
+                checkQuestionBank()
+            }else{
+                bank.questionList[questionNumber].status = 0
+                checkQuestionBank()
             }
         }
     }
@@ -70,7 +75,7 @@ class CoreViewController: UIViewController {
     //can be blocked
     func checkQuestionBank(){
         for i in (0...bank.questionList.count - 1) {
-            print ( "\(i))" + " \(bank.questionList[i].questionText)" + "\(bank.questionList[i].calculatedAnswer)" )
+            print ( "\(i))" + " \(bank.questionList[i].questionText)" + "\(bank.questionList[i].calculatedAnswer), \(bank.questionList[i].status)" )
         }
     }
 
