@@ -23,35 +23,50 @@ class QuestionBank{
     
     //class initialization
     init(){
-        
     }
+    
     init(totalQuestionNo : Int, gameLevel : Int, gameType : String) {
         self.upperLimit = totalQuestionNo
         self.operationType = gameType
         
-        if (gameLevel > 1){
-            self.firstNumLimit = 99
-            self.secondNumLimit = 99
-        }else{
-            self.firstNumLimit = 20
-            self.secondNumLimit = 10
-        }
-        
+        self.setGameDifficulties(gameLevel: gameLevel)
+
         for _ in (1...upperLimit) {
             self.questionList.append(Question(question: self.buildQuestion(), answer: self.getAnswer()))
         }
-        
     }
-    
     
     func buildQuestion () -> String{
         self.firstNum = Double(arc4random_uniform(firstNumLimit))
         self.secondNum = Double(arc4random_uniform(secondNumLimit))
+
         return String(format: "%.f", firstNum) + " \(operationType)" + String(format: "%.f", secondNum) + " = "
     }
     
     func getAnswer () -> Double{
         let calc = Calculator(firstNum: firstNum, secondNum: secondNum, operation: operationType)
         return calc.performOperation()
+    }
+    
+    func setGameDifficulties (gameLevel: Int) {
+        switch (gameLevel){
+        case 1:
+            self.firstNumLimit = 50
+            self.secondNumLimit = 10
+        case 2:
+            self.firstNumLimit = 100
+            self.secondNumLimit = 10
+        case 3:
+            self.firstNumLimit = 200
+            self.secondNumLimit = 10
+        case 4:
+            self.firstNumLimit = 100
+            self.secondNumLimit = 100
+            
+        default:
+            self.firstNumLimit = 1000
+            self.secondNumLimit = 1000
+        }
+        
     }
 }

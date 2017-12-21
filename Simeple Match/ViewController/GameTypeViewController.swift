@@ -8,9 +8,15 @@
 
 import UIKit
 
-class GameTypeViewController: UIViewController {
-
-    //desc: Action when the game type button pressed
+class GameTypeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
+{
+    
+    @IBOutlet weak var difficultiesPickerView: UIPickerView!
+    @IBOutlet weak var secmentedControl: UISegmentedControl!
+    
+    var selectedVar : Int = 0
+    let difficulties = ["1","2", "3", "4", "5"]
+    
     @IBAction func toCoreViewController(_ sender: Any) {
         
         let myVC = storyboard?.instantiateViewController(withIdentifier: "CoreView") as! CoreViewController
@@ -29,22 +35,41 @@ class GameTypeViewController: UIViewController {
         default: return "something went wrong"
         }
     }
-    
+
     func getTotalQuestionNo()->Int{
         return 50
     }
     
     func getGameLevel()->Int{
-        return 1
+        return selectedVar + 1
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        difficultiesPickerView.delegate = self
+        difficultiesPickerView.dataSource = self
     }
 
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    //pickerView
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return difficulties.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return difficulties[row]
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedVar = row
+        print("row = \(row)")
+    }
 }
