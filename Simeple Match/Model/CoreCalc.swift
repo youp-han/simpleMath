@@ -24,7 +24,7 @@ struct Calculator{
             return firstNum * secondNum
         case "/" :
             if (secondNum > 0) {
-                return firstNum / secondNum
+                return String(format: "%.f", divide(firstNum: firstNum, secondNum: secondNum)) + " .. " + \" String(format: "%.f", divide(firstNum: firstNum, secondNum: secondNum)) (remainder(firstNum: firstNum, secondNum: secondNum)) "
             }else{
                 return 0
             }
@@ -34,6 +34,17 @@ struct Calculator{
         }
         
     }
+    
+    func divide (firstNum: Double, secondNum: Double)-> Int {
+        return (Int(firstNum) / Int(secondNum))
+        
+    }
+    
+    func remainder (firstNum: Double, secondNum: Double)-> Double {
+        return Double(Int(firstNum) % Int(secondNum))
+        
+    }
 }
+
 
 
