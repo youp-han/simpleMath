@@ -11,17 +11,24 @@ import UIKit
 class GameTypeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {
     
-    @IBOutlet weak var difficultiesPickerView: UIPickerView!
-    @IBOutlet weak var secmentedControl: UISegmentedControl!
+    @IBOutlet weak var practiceLevelPickerView: UIPickerView!
+    @IBOutlet weak var subLevelPickerView: UIPickerView!
+    @IBOutlet weak var numberOfQuestionsPckerView: UIPickerView!
     
-    var selectedVar : Int = 0
-    let difficulties = ["1","2", "3", "4", "5"]
+    
+    var selectedVarForPracticeLevels : Int = 0
+    var selectedVarForSubLevels : Int = 0
+    var selectedVarForNoOfQuestions : Int = 0
+
+    let practiceLevel = ["1","2", "3", "4", "5"]
+    let sublevels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+    let noOfQuestions = ["10", "25", "50", "100"]
     
     @IBAction func toCoreViewController(_ sender: Any) {
         
         let myVC = storyboard?.instantiateViewController(withIdentifier: "CoreView") as! CoreViewController
         let button = sender as! UIButton
-        myVC.bank = QuestionBank(totalQuestionNo: getTotalQuestionNo(), gameLevel: getGameLevel(), gameType : getOpertaionType(button: button.tag))
+        myVC.bank = QuestionBank(practiceLevel: getPracticeLevel(), sublevel : getSubLevel(), noOfQuestions: getTotalQuestionNo(), gameType : getOpertaionType(button: button.tag))
         navigationController?.pushViewController(myVC, animated: true)
     }
     
@@ -36,32 +43,65 @@ class GameTypeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
 
-    func getTotalQuestionNo()->Int{
-        return 50
+    
+    func getPracticeLevel()->Int{
+        return Int(practiceLevel[selectedVarForPracticeLevels])!
     }
     
-    func getGameLevel()->Int{
-        return selectedVar + 1
+    func getSubLevel()->Int{
+        return Int(sublevels[selectedVarForSubLevels])!
+    }
+    
+    func getTotalQuestionNo()->Int{
+        return Int(noOfQuestions[selectedVarForNoOfQuestions])!
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        difficultiesPickerView.delegate = self
-        difficultiesPickerView.dataSource = self
+        self.setDelegate()
+        self.pickerViewDefault()
+        
     }
 
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func setDelegate(){
+        practiceLevelPickerView.delegate = self
+        practiceLevelPickerView.dataSource = self
+        subLevelPickerView.delegate = self
+        subLevelPickerView.dataSource = self
+        numberOfQuestionsPckerView.delegate = self
+        numberOfQuestionsPckerView.dataSource = self
+    }
     
     //pickerView
+    func pickerViewDefault() {
+        practiceLevelPickerView.selectRow(0, inComponent: 0, animated: true)
+        subLevelPickerView.selectRow(0, inComponent: 0, animated: true)
+        numberOfQuestionsPckerView.selectRow(1, inComponent: 0, animated: true)
+    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return difficulties.count
+        if (pickerView == practiceLevelPickerView){
+            return practiceLevel.count
+        } else if(pickerView == subLevelPickerView){
+            return sublevels.count
+        } else {
+            return noOfQuestions.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return difficulties[row]
+        
+        if (pickerView == practiceLevelPickerView){
+            return practiceLevel[row]
+        } else if(pickerView == subLevelPickerView){
+            return sublevels[row]
+        } else {
+            return noOfQuestions[row]
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -69,7 +109,16 @@ class GameTypeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedVar = row
-        print("row = \(row)")
+        
+        if (pickerView == practiceLevelPickerView){
+            selectedVarForPracticeLevels = row
+            print("selectedVarForDifficulties row = \(row)")
+        } else if(pickerView == subLevelPickerView){
+            selectedVarForSubLevels = row
+            print("selectedVarForSubLevels row = \(row)")
+        } else {
+            selectedVarForNoOfQuestions = row
+            print("selectedVarForNoOfQuestions row = \(row)")
+        }
     }
 }

@@ -39,10 +39,7 @@ class CoreViewController: UIViewController {
     //desc: move to the next Question
     func nextQuestion() {
         if (questionNumber >= bank.questionList.count){
-            questionNumber = 0
-            score = 0
             print ("game over")
-            nextQuestion()
             
         }else{
             questionLabel.text = bank.questionList[questionNumber].questionText
