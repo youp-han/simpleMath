@@ -40,6 +40,7 @@ class CoreViewController: UIViewController {
     func nextQuestion() {
         if (questionNumber >= bank.questionList.count){
             print ("game over")
+            alertMessage()
             
         }else{
             questionLabel.text = bank.questionList[questionNumber].questionText
@@ -50,7 +51,6 @@ class CoreViewController: UIViewController {
         }
     }
     
-   
     //desc: check user's answer with the system's answer and return bool value
     func checkAnswer(){
         if(userAnswerText.text=="") { userAnswerText.text = "0" }
@@ -66,6 +66,11 @@ class CoreViewController: UIViewController {
         }
     }
     
+    //desc : close self view
+
+    func closeView(){
+        navigationController?.popViewController(animated: true)
+    }
     
     
     //desc: check questions in Bank
@@ -76,7 +81,59 @@ class CoreViewController: UIViewController {
         }
     }
 
-   
+    //desc : To view Results
+    func toResultDetailTableViewController() {
+        closeView()
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "ResultDetailView") as! ResultDetailTableViewController
+        navigationController?.pushViewController(myVC, animated: true)
+    }
+    
+    
+    //desc: alder Message
+    
+    func alertMessage() {
+        let alertController = UIAlertController(title: "Finished",message: "View Results to View Results \n, Close to Close the current windows", preferredStyle: UIAlertControllerStyle.alert)
+        
+        //UIAlertActionStye.destructive 지정 글꼴 색상 변경
+        let okAction = UIAlertAction(title: "View Results", style: UIAlertActionStyle.default){ (action: UIAlertAction) in
+            print("viewresults")
+            self.toResultDetailTableViewController()
+        }
+        
+        let cancelButton = UIAlertAction(title: "Close", style: UIAlertActionStyle.default) { (action: UIAlertAction) in
+            print("close")
+            self.closeView()
+        }
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelButton)
+        
+        self.present(alertController,animated: true,completion: nil)
+    }
+    
+    /*
+
+ @IBAction func ActionSheetRunBtn(_ sender: Any) {
+ // 제목 및 메시지 표시 안할 경우 nil지정
+ let alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle:  UIAlertControllerStyle.actionSheet)
+ 
+ let informantAction: UIAlertAction = UIAlertAction(title: "내용 신고하기", style: UIAlertActionStyle.destructive, handler:{
+ (action: UIAlertAction!) -> Void in
+ 
+ print("내용 신고 알림 처리")
+ })
+ 
+ let cancelAction: UIAlertAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler:{
+ (action: UIAlertAction!) -> Void in
+ print("취소처리")
+ })
+ 
+ alert.addAction(cancelAction)
+ alert.addAction(informantAction)
+ 
+ self.present(alert, animated: true, completion: nil)
+ }*/
+ 
 }
 
 

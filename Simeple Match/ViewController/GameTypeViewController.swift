@@ -78,9 +78,15 @@ class GameTypeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     //pickerView
     func pickerViewDefault() {
-        practiceLevelPickerView.selectRow(0, inComponent: 0, animated: true)
-        subLevelPickerView.selectRow(0, inComponent: 0, animated: true)
-        numberOfQuestionsPckerView.selectRow(1, inComponent: 0, animated: true)
+        let row : Int = 0
+        let comp : Int = 0
+        practiceLevelPickerView.selectRow(row, inComponent: comp, animated: true)
+        subLevelPickerView.selectRow(row, inComponent: comp, animated: true)
+        numberOfQuestionsPckerView.selectRow(row + 1, inComponent: comp, animated: true)
+        
+        pickerView(practiceLevelPickerView, didSelectRow: 1, inComponent: 0)
+        pickerView(numberOfQuestionsPckerView, didSelectRow: 1, inComponent: 0)
+        pickerView(numberOfQuestionsPckerView, didSelectRow: 1, inComponent: 0)
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -105,7 +111,13 @@ class GameTypeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        if (pickerView == practiceLevelPickerView){
+            return 1
+        } else if(pickerView == subLevelPickerView){
+            return 1
+        } else {
+            return 1
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

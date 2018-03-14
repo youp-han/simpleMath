@@ -19,6 +19,7 @@
 		149996E31FDA1D0B004EBF4D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149996E21FDA1D0B004EBF4D /* Question.swift */; };
 		149996E51FDA1D22004EBF4D /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149996E41FDA1D22004EBF4D /* QuestionBank.swift */; };
 		149996EB1FDA87B0004EBF4D /* GameTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149996EA1FDA87B0004EBF4D /* GameTypeViewController.swift */; };
+		A07113AD205958270009F4C2 /* ResultDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07113AC205958270009F4C2 /* ResultDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		149996E21FDA1D0B004EBF4D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		149996E41FDA1D22004EBF4D /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
 		149996EA1FDA87B0004EBF4D /* GameTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeViewController.swift; sourceTree = "<group>"; };
+		A07113AC205958270009F4C2 /* ResultDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				142F34BA1FDFA24F00EBD7FD /* MainViewController.swift */,
 				142F34BC1FDFA2CD00EBD7FD /* RegisterViewController.swift */,
 				142F34C01FDFC6F800EBD7FD /* ResultTableViewController.swift */,
+				A07113AC205958270009F4C2 /* ResultDetailTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				149996E51FDA1D22004EBF4D /* QuestionBank.swift in Sources */,
 				149996EB1FDA87B0004EBF4D /* GameTypeViewController.swift in Sources */,
 				141FE04B1FCAAC190004A139 /* AppDelegate.swift in Sources */,
+				A07113AD205958270009F4C2 /* ResultDetailTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
