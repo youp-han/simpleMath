@@ -384,7 +384,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="h6C-qT-0Xl" firstAttribute="centerX" secondItem="1Jt-AF-ZdP" secondAttribute="centerX" id="ZLa-8w-jNO"/>
                                     <constraint firstItem="h6C-qT-0Xl" firstAttribute="centerY" secondItem="1Jt-AF-ZdP" secondAttribute="centerY" id="reL-ey-FGw"/>
@@ -453,7 +452,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="uXl-eT-hXm" firstAttribute="leading" secondItem="hg7-iD-NB8" secondAttribute="leading" constant="20" id="41n-OG-7l9"/>
                                     <constraint firstAttribute="trailing" secondItem="uXl-eT-hXm" secondAttribute="trailing" constant="20" id="Wzf-3V-O1C"/>
