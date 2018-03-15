@@ -9,13 +9,11 @@
 import Foundation
 
 // desc: QuestionBank class
-class QuestionBank{
+class QuestionBank {
     var questionList = [Question]()
-    
     var firstNum : Double = 0.0
     var secondNum : Double = 0.0
     lazy var operationType : String = ""
-    
     lazy var upperLimit : Int = 0
     var firstNumLimit : UInt32 = 0
     var secondNumLimit : UInt32 = 0

@@ -69,7 +69,9 @@ class CoreViewController: UIViewController {
     //desc : close self view
 
     func closeView(){
+        questionBankToJson()
         navigationController?.popViewController(animated: true)
+        
     }
     
     
@@ -80,6 +82,14 @@ class CoreViewController: UIViewController {
             print ( "\(i))" + " \(bank.questionList[i].questionText)" + "\(bank.questionList[i].calculatedAnswer), \(bank.questionList[i].status)" )
         }
     }
+    
+    func questionBankToJson() {
+        //let encodedData = try? JSONEncoder().encode(bank.questionList)
+        //let encodedData = try? JSONSerialization.data(withJSONObject: bank.questionList[0])
+        //print ( "\(String(describing: encodedData))")
+    }
+    
+    
 
     //desc : To view Results
     func toResultDetailTableViewController() {

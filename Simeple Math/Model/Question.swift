@@ -9,10 +9,11 @@
 import Foundation
 
 //desc: Question Class
-class Question {
+class Question : Codable{
     let questionText : String
     let calculatedAnswer : String
     var status : Int = 0
+    
     init(question:String, answer:Double){
         self.questionText = question
         self.calculatedAnswer = String(answer)

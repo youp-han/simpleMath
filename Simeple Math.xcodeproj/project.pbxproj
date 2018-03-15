@@ -11,11 +11,11 @@
 		141FE04D1FCAAC190004A139 /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141FE04C1FCAAC190004A139 /* CoreViewController.swift */; };
 		141FE0501FCAAC190004A139 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141FE04E1FCAAC190004A139 /* Main.storyboard */; };
 		141FE0521FCAAC190004A139 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141FE0511FCAAC190004A139 /* Assets.xcassets */; };
-		141FE0551FCAAC190004A139 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141FE0531FCAAC190004A139 /* LaunchScreen.storyboard */; };
 		141FE05D1FCC07710004A139 /* CoreCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141FE05C1FCC07710004A139 /* CoreCalc.swift */; };
 		142F34BB1FDFA24F00EBD7FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F34BA1FDFA24F00EBD7FD /* MainViewController.swift */; };
 		142F34BD1FDFA2CD00EBD7FD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F34BC1FDFA2CD00EBD7FD /* RegisterViewController.swift */; };
 		142F34C11FDFC6F800EBD7FD /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142F34C01FDFC6F800EBD7FD /* ResultTableViewController.swift */; };
+		145AC246205A30DD00126207 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145AC245205A30DD00126207 /* User.swift */; };
 		149996E31FDA1D0B004EBF4D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149996E21FDA1D0B004EBF4D /* Question.swift */; };
 		149996E51FDA1D22004EBF4D /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149996E41FDA1D22004EBF4D /* QuestionBank.swift */; };
 		149996EB1FDA87B0004EBF4D /* GameTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149996EA1FDA87B0004EBF4D /* GameTypeViewController.swift */; };
@@ -28,12 +28,12 @@
 		141FE04C1FCAAC190004A139 /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
 		141FE04F1FCAAC190004A139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		141FE0511FCAAC190004A139 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		141FE0541FCAAC190004A139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		141FE0561FCAAC190004A139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		141FE05C1FCC07710004A139 /* CoreCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreCalc.swift; sourceTree = "<group>"; };
 		142F34BA1FDFA24F00EBD7FD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		142F34BC1FDFA2CD00EBD7FD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		142F34C01FDFC6F800EBD7FD /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		145AC245205A30DD00126207 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		149996E21FDA1D0B004EBF4D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		149996E41FDA1D22004EBF4D /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
 		149996EA1FDA87B0004EBF4D /* GameTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +86,7 @@
 				141FE05C1FCC07710004A139 /* CoreCalc.swift */,
 				149996E21FDA1D0B004EBF4D /* Question.swift */,
 				149996E41FDA1D22004EBF4D /* QuestionBank.swift */,
+				145AC245205A30DD00126207 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				141FE04E1FCAAC190004A139 /* Main.storyboard */,
-				141FE0531FCAAC190004A139 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,7 +179,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				141FE0551FCAAC190004A139 /* LaunchScreen.storyboard in Resources */,
 				141FE0521FCAAC190004A139 /* Assets.xcassets in Resources */,
 				141FE0501FCAAC190004A139 /* Main.storyboard in Resources */,
 			);
@@ -202,6 +201,7 @@
 				149996EB1FDA87B0004EBF4D /* GameTypeViewController.swift in Sources */,
 				141FE04B1FCAAC190004A139 /* AppDelegate.swift in Sources */,
 				A07113AD205958270009F4C2 /* ResultDetailTableViewController.swift in Sources */,
+				145AC246205A30DD00126207 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,14 +214,6 @@
 				141FE04F1FCAAC190004A139 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		141FE0531FCAAC190004A139 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				141FE0541FCAAC190004A139 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -341,9 +333,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4236N486Z7;
-				INFOPLIST_FILE = "Simeple Match/Info.plist";
+				INFOPLIST_FILE = "Simeple Math/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "redCat.Simeple-Match";
+				PRODUCT_BUNDLE_IDENTIFIER = "redCat.Simeple-Math";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -358,9 +351,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4236N486Z7;
-				INFOPLIST_FILE = "Simeple Match/Info.plist";
+				INFOPLIST_FILE = "Simeple Math/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "redCat.Simeple-Match";
+				PRODUCT_BUNDLE_IDENTIFIER = "redCat.Simeple-Math";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
