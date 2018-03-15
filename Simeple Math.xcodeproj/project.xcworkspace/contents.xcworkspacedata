@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Simeple Match.xcodeproj">
+      location = "self:/Users/hanmike/Documents/Work/swift/simpleMath/Simeple Math.xcodeproj">
    </FileRef>
 </Workspace>
