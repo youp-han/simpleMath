@@ -133,9 +133,9 @@ class QuestionBank {
     
     
     //get Ansers for built Questions
-    func getAnswer () -> Double{
+    func getAnswer () -> String{
         let calc = Calculator(firstNum: firstNum, secondNum: secondNum, operation: operationType)
-        return calc.performOperation()
+        return String(format: "%.f", calc.performOperation())
     }
     
     //First Number Not 0

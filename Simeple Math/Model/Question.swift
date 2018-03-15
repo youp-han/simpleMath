@@ -9,15 +9,17 @@
 import Foundation
 
 //desc: Question Class
-class Question : Codable{
+class Question {
     let questionText : String
     let calculatedAnswer : String
     var status : Int = 0
+    var userAnswer : Int = 0
     
-    init(question:String, answer:Double){
+    init(question:String, answer:String){
         self.questionText = question
-        self.calculatedAnswer = String(answer)
+        self.calculatedAnswer = answer
         self.status = 0
+        self.userAnswer = 0
         
     }
 }

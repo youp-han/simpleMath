@@ -78,14 +78,13 @@ class GameTypeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     //pickerView
     func pickerViewDefault() {
-        let row : Int = 0
-        let comp : Int = 0
-        practiceLevelPickerView.selectRow(row, inComponent: comp, animated: true)
-        subLevelPickerView.selectRow(row, inComponent: comp, animated: true)
-        numberOfQuestionsPckerView.selectRow(row + 1, inComponent: comp, animated: true)
+
+        practiceLevelPickerView.selectRow(0, inComponent: 0, animated: true)
+        subLevelPickerView.selectRow(0, inComponent: 0, animated: true)
+        numberOfQuestionsPckerView.selectRow(1, inComponent: 0, animated: true)
         
-        pickerView(practiceLevelPickerView, didSelectRow: 1, inComponent: 0)
-        pickerView(numberOfQuestionsPckerView, didSelectRow: 1, inComponent: 0)
+        pickerView(practiceLevelPickerView, didSelectRow: 0, inComponent: 0)
+        pickerView(subLevelPickerView, didSelectRow: 0, inComponent: 0)
         pickerView(numberOfQuestionsPckerView, didSelectRow: 1, inComponent: 0)
     }
     

@@ -39,7 +39,6 @@ class CoreViewController: UIViewController {
     //desc: move to the next Question
     func nextQuestion() {
         if (questionNumber >= bank.questionList.count){
-            print ("game over")
             alertMessage()
             
         }else{
@@ -58,6 +57,7 @@ class CoreViewController: UIViewController {
             if (Double(userAnswerText.text!)! == (Double(bank.questionList[questionNumber].calculatedAnswer))){
                 score += 1
                 bank.questionList[questionNumber].status = 1
+                bank.questionList[questionNumber].userAnswer = Int(userAnswerText.text!)!
                 checkQuestionBank()
             }else{
                 bank.questionList[questionNumber].status = 0
@@ -69,9 +69,7 @@ class CoreViewController: UIViewController {
     //desc : close self view
 
     func closeView(){
-        questionBankToJson()
         navigationController?.popViewController(animated: true)
-        
     }
     
     
@@ -82,19 +80,12 @@ class CoreViewController: UIViewController {
             print ( "\(i))" + " \(bank.questionList[i].questionText)" + "\(bank.questionList[i].calculatedAnswer), \(bank.questionList[i].status)" )
         }
     }
-    
-    func questionBankToJson() {
-        //let encodedData = try? JSONEncoder().encode(bank.questionList)
-        //let encodedData = try? JSONSerialization.data(withJSONObject: bank.questionList[0])
-        //print ( "\(String(describing: encodedData))")
-    }
-    
-    
 
     //desc : To view Results
     func toResultDetailTableViewController() {
         closeView()
         let myVC = storyboard?.instantiateViewController(withIdentifier: "ResultDetailView") as! ResultDetailTableViewController
+        myVC.myresult = bank
         navigationController?.pushViewController(myVC, animated: true)
     }
     
