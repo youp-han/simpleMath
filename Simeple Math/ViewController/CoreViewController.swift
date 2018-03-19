@@ -45,9 +45,9 @@ class CoreViewController: UIViewController {
             questionLabel.text = bank.questionList[questionNumber].questionText
             userAnswerText.text = ""
             totalQNoLabel.text = "\(questionNumber + 1)" + "/" + "\(bank.questionList.count)"
-            scoreLabel.text = "Score: \(score)"
 
         }
+        scoreLabel.text = "Score: \(score)"
     }
     
     //desc: check user's answer with the system's answer and return bool value
