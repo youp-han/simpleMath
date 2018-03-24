@@ -19,6 +19,7 @@
 		149996E31FDA1D0B004EBF4D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149996E21FDA1D0B004EBF4D /* Question.swift */; };
 		149996E51FDA1D22004EBF4D /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149996E41FDA1D22004EBF4D /* QuestionBank.swift */; };
 		149996EB1FDA87B0004EBF4D /* GameTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149996EA1FDA87B0004EBF4D /* GameTypeViewController.swift */; };
+		3190385F72DB49E480CC8817 /* Pods_Simeple_Math.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4128983FDE1D04E7FC3E8ED5 /* Pods_Simeple_Math.framework */; };
 		A07113AD205958270009F4C2 /* ResultDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07113AC205958270009F4C2 /* ResultDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,9 @@
 		149996E21FDA1D0B004EBF4D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		149996E41FDA1D22004EBF4D /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
 		149996EA1FDA87B0004EBF4D /* GameTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypeViewController.swift; sourceTree = "<group>"; };
+		2756D477209AFBC435B4D503 /* Pods-Simeple Math.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simeple Math.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Simeple Math/Pods-Simeple Math.debug.xcconfig"; sourceTree = "<group>"; };
+		4128983FDE1D04E7FC3E8ED5 /* Pods_Simeple_Math.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simeple_Math.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		815DD020929F11DAB83D7369 /* Pods-Simeple Math.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simeple Math.release.xcconfig"; path = "Pods/Target Support Files/Pods-Simeple Math/Pods-Simeple Math.release.xcconfig"; sourceTree = "<group>"; };
 		A07113AC205958270009F4C2 /* ResultDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3190385F72DB49E480CC8817 /* Pods_Simeple_Math.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				141FE0491FCAAC190004A139 /* Simeple Math */,
 				141FE0481FCAAC190004A139 /* Products */,
+				FA801422EB1C4F2C5A2FC2C0 /* Pods */,
+				6F25D05CD61E2B3434EE4142 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +127,23 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		6F25D05CD61E2B3434EE4142 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4128983FDE1D04E7FC3E8ED5 /* Pods_Simeple_Math.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA801422EB1C4F2C5A2FC2C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2756D477209AFBC435B4D503 /* Pods-Simeple Math.debug.xcconfig */,
+				815DD020929F11DAB83D7369 /* Pods-Simeple Math.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,9 +151,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 141FE0591FCAAC190004A139 /* Build configuration list for PBXNativeTarget "Simeple Math" */;
 			buildPhases = (
+				91337085D4C88AB468B33A55 /* [CP] Check Pods Manifest.lock */,
 				141FE0431FCAAC190004A139 /* Sources */,
 				141FE0441FCAAC190004A139 /* Frameworks */,
 				141FE0451FCAAC190004A139 /* Resources */,
+				3001C8A82AA023C4784A622C /* [CP] Embed Pods Frameworks */,
+				477F95E521DC34FC020EFEB3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,6 +212,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3001C8A82AA023C4784A622C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Simeple Math/Pods-Simeple Math-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simeple Math/Pods-Simeple Math-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		477F95E521DC34FC020EFEB3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simeple Math/Pods-Simeple Math-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91337085D4C88AB468B33A55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Simeple Math-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		141FE0431FCAAC190004A139 /* Sources */ = {
@@ -328,6 +413,7 @@
 		};
 		141FE05A1FCAAC190004A139 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2756D477209AFBC435B4D503 /* Pods-Simeple Math.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -346,6 +432,7 @@
 		};
 		141FE05B1FCAAC190004A139 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 815DD020929F11DAB83D7369 /* Pods-Simeple Math.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

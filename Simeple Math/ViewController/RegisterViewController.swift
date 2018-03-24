@@ -14,6 +14,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var ageText: UITextField!
     @IBOutlet weak var infoTextView: UITextView!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var gender: UISegmentedControl!
     
     var initiateMsg : String = "이름 과 나이를 입력 후 저장 버튼을 눌러주세요"
     
@@ -30,7 +31,7 @@ class RegisterViewController: UIViewController {
     }
     
     func checkRegisteredUser()->Bool{
-        return true
+        return false
     }
     
     func greetReturnUser(){
@@ -49,5 +50,5 @@ class RegisterViewController: UIViewController {
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
 }
